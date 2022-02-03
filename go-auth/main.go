@@ -15,5 +15,7 @@ func main() {
 
 	e.POST("/login", h.login)
 	e.GET("/home", h.profile, IsLogged)
+	e.GET("/admin", h.profile, IsLogged, isAdmin)
+
 	e.Logger.Fatal(e.Start(":1323"))
 }
