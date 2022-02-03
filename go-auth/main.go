@@ -12,7 +12,8 @@ func main() {
 	})
 
 	h := &handler{}
-	
+
 	e.POST("/login", h.login)
+	e.GET("/home", h.profile, IsLogged)
 	e.Logger.Fatal(e.Start(":1323"))
 }
